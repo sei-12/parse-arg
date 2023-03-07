@@ -1,3 +1,13 @@
 #!/bin/zsh
-echo "----------\n./main -a -p abc"
+
+echo "----------"
+echo "./main -a -p abc"
 ./main -a -p abc
+
+echo "----------"
+echo "./main -p abc"
+./main -p abc
+
+echo "----------"
+echo "./main -p"
+./main -p
