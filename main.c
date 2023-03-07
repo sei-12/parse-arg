@@ -17,17 +17,19 @@ void parse_arg(struct Argment* arg, char key[], int argc, char* argv[]){
         arg->exists = true;
 
         if( i + 1 == argc){
-            return;
+            break;
         }
 
         if(strncmp(argv[i + 1],"-",1) == 0 || strncmp(argv[i + 1],"--",2) == 0 ){
-            return;
+            break;
         }
 
         strcpy(arg->value,argv[i + 1]);
         return;
     }
+    strcpy(arg->value,"");
     return;
+
 }
 
 int main(int argc, char* argv[]){
