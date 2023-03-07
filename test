@@ -1,0 +1,3 @@
+#!/bin/zsh
+echo "----------\n./main -a -p abc"
+./main -a -p abc
