@@ -5,16 +5,15 @@
 
 // 可変個の引数に対応していない
 struct Argment{
-    char key[64];
     bool exists;
     char value[128];
 };
 
-int parse_arg(struct Argment* arg, int argc, char* argv[]){
+void parse_arg(struct Argment* arg, char key[], int argc, char* argv[]){
     arg->exists = false;
 
     for(int i = 0; i < argc ; i++){
-        if(strcmp(argv[i],arg->key) != 0) continue;
+        if(strcmp(argv[i],key) != 0) continue;
         arg->exists = true;
 
         if( i + 1 == argc){
@@ -32,9 +31,7 @@ int parse_arg(struct Argment* arg, int argc, char* argv[]){
 }
 
 int main(int argc, char* argv[]){
-    struct Argment arg;
-    strcpy(arg.key,"-p");
-    parse_arg(&arg,argc,argv);
+    struct Argment arg; parse_arg(&arg,"-p",argc,argv);
 
     printf("print: %s\n",arg.value);
 
