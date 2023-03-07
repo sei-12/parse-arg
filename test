@@ -11,3 +11,7 @@ echo "./main -p abc"
 echo "----------"
 echo "./main -p"
 ./main -p
+
+echo "----------"
+echo "./main -p -a"
+./main -p -a
