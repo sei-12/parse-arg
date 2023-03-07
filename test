@@ -15,3 +15,11 @@ echo "./main -p"
 echo "----------"
 echo "./main -p -a"
 ./main -p -a
+
+echo "----------"
+echo "./main -a"
+./main -a
+
+echo "----------"
+echo "./main -p abc def"
+./main -p abc def
