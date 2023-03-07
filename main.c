@@ -12,7 +12,7 @@ struct Argment{
 
 int parse_arg(struct Argment* arg, int argc, char* argv[]){
     arg->exists = false;
-    
+
     for(int i = 0; i < argc ; i++){
         if(strcmp(argv[i],arg->key) != 0) continue;
         arg->exists = true;
@@ -32,10 +32,11 @@ int parse_arg(struct Argment* arg, int argc, char* argv[]){
 }
 
 int main(int argc, char* argv[]){
+    struct Argment arg;
+    strcpy(arg.key,"-p");
+    parse_arg(&arg,argc,argv);
 
-    char test[32];
-    get_arg("-p",test,argc,argv);
-    printf("print: %s\n",test);
+    printf("print: %s\n",arg.value);
 
     return 0;
 }
